@@ -70,6 +70,8 @@ export class CustomerListComponent {
   
     })
 
+    doc.text('Invoice', 20, 20)
+
     doc.save('table.pdf')
 
   }
