@@ -1,0 +1,25 @@
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-12 col-sm-8 col-md-6">
+        <form action="" class="border border-2 p-4 shadow bg-body-tertiary" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+            <h2 class="my-3 fw-bold text-center">Login</h2>
+            <div class="mb-5 text-center">
+
+                <i class="shadow p-4 fa-solid fa-user fa-5x text-primary-emphasis border rounded-pill mx-auto"></i>
+            </div>
+            <div class="mb-3">
+                <label for="">Username</label>
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label for="">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark form-control" [disabled]="loginForm.invalid">login</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="col"></div>
+</div>

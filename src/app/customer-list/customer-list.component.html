@@ -1,0 +1,59 @@
+<!-- <div class="my-3 text-end">
+    <button class="btn btn-success" routerLink="/customer/add">Add Customer</button>
+</div> -->
+
+<div class="card my-3 bg-body-tertiary shadow" *ngFor="let cust of customers">
+    <div class="card-header fw-semibold text-primary-emphasis">
+        Customer name : {{cust.name|uppercase}} cust id : {{cust.id}}
+    </div>
+    <div class="card-body row ">
+        <div class="col-2 border-end">
+            <h5 class="text-center ">Customer Details</h5>
+            <hr>
+            <div class="my-3"><span class="me-2"><i class="fa-solid fa-phone"></i></span>{{cust.phone}}</div>
+
+            <div><span class="me-2"><i class="fa-regular fa-envelope"></i></span>{{cust.email}}</div>
+
+
+        </div>
+        <div class="col-2 border-end">
+            <h5 class="text-center">Odometer</h5>
+            <hr>
+            <div class="my-3 text-center"><span class="me-2"><i class="fa-solid fa-gauge"></i></span>{{cust.running_km}}km</div>
+
+
+
+        </div>
+        <div class="col-2 border-end">
+            <h5 class="text-center ">Date</h5>
+            <hr>
+            <div class="my-3 text-center">
+                <span class="me-2"><i class="fa-solid fa-calendar-days"></i></span>{{cust.created_date|date}}
+            </div>
+
+        </div>
+        <div class="col-2 border-end">
+            <h5 class="text-center">VehicleNumber</h5>
+            <hr>
+            <div class="my-3 text-center"><span class="me-2"><i class="fa-solid fa-car"></i></span>{{cust.vehicle_no}}</div>
+
+        </div>
+        <div class="col-2 border-end">
+            <h5 class="text-center">Total</h5>
+            <hr>
+            <div class="my-3 text-center"><span class="me-2"><i class="fa-solid fa-indian-rupee-sign"></i></span>{{cust.work_total?cust.work_total:0}}</div>
+        </div>
+        <div class="col-2 ">
+            <h5 class="text-center">Aciton</h5>
+            <hr>
+
+            <div class="my-3 text-center d-flex gap-2 flex-column flex-xl-row"> 
+                <a href="" [routerLink]="['/customer', cust.id]" class="btn btn-sm btn-primary me-1"><i class="fa-solid fa-eye"></i></a>
+                <a href="" routerLink="/customer/add" [queryParams]="{custId:cust.id}" class="btn btn-sm btn-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                <button (click)="handleDelete(cust.id)" class="btn btn-sm btn-danger me-1"><i class="fa-solid fa-trash"></i></button>
+                <button (click)="generatePdf(cust.id)" class="btn btn-info btn-sm"><i class="fa-solid fa-file-invoice"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
