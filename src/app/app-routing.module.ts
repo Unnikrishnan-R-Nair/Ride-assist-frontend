@@ -5,8 +5,11 @@ import { CustomerCreateComponent } from './customer-create/customer-create.compo
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { LoginComponent } from './login/login.component';
 import { WorkSummaryComponent } from './work-summary/work-summary.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
+
+  {path:"invoice/:id", component:InvoiceComponent},
 
   {path:"worksummary/:id", component:WorkSummaryComponent},
 

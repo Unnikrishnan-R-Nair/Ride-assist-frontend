@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="my-5 bg-white px-5 pb-4 pt-5">
+        <div class="text-end">
+            <button (click)="generatePdf()" class="rounded">Download</button>
+
+        </div>
+        <div id="my_table">
+            
+            <table class="table my-3 mb-5" id="my_table1">
+                
+                
+                    <tr >
+                        <th colspan="4" class="text-center"><span>INVOICE</span></th>
+                        
+                    </tr>
+                    <tr>
+                        <th colspan="4"><hr></th>
+                    </tr>
+                    <tr style="margin-top: 50px;">
+                        <td>Name : </td>
+                        <td class="ms-2">{{customer.name}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Email : </td>
+                        <td>{{customer.email}}</td>
+                        <td></td>
+                        <td></td>
+    
+                    </tr>
+                    <tr>
+                        <td>Mob no : </td>
+                        <td>{{customer.phone}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle no : </td>
+                        <td>{{customer.vehicle_no}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="w-25">Running Kms : </td>
+                        <td>{{customer.running_km}} Km</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+            </table>
+                    
+            <table class="table my-3" id="my_table2">
+                        
+                    
+                <thead class="bg-primary">
+    
+                    <tr class="">
+                        <th class="bg-body-secondary">Sl no:</th>
+                        <th class="bg-body-secondary">Work</th>
+                        <th class="bg-body-secondary">Description</th>
+                        <th class="bg-body-secondary">Amount (Rs.)</th>
+                    </tr>
+                </thead>
+                    
+                <tbody class="mb-5">
+                    <tr *ngFor="let work of customer.works; let index=index">
+                        
+                        <td>{{index+1}}</td>
+                        <td>{{work.title}}</td>
+                        <td>{{work.description}}</td>
+                        <td>{{work.amount}}</td>
+    
+                        </tr>
+                    </tbody>
+                    <tr class="">
+                        <td class="bg-body-secondary"></td>
+                        <td class="bg-body-secondary"></td>
+                        <td class="text-end bg-body-secondary"><span class="fw-semibold bg-body-secondary m-0 p-0">Total</span> : Rs.</td>
+                        <td class="bg-body-secondary"> &nbsp;{{customer.work_total}}</td>
+                    </tr>
+            </table>
+            <table class="table my-3" id="my_table3">
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+    
+                <tr class="pt-5 mt-5">
+                    <td>Advisor Sign : </td>
+                    <td></td>
+                    <td class="text-end me-5">Customer Sign : </td>
+                    <td></td>
+                </tr>
+                    
+            </table>
+        </div>
+    </div>
+</div>

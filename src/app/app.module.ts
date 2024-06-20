@@ -14,6 +14,7 @@ import { NavComponent } from './nav/nav.component';
 import { WorkSummaryComponent } from './work-summary/work-summary.component';
 import { WorkCreateComponent } from './work-create/work-create.component';
 import { WorkListComponent } from './work-list/work-list.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WorkListComponent } from './work-list/work-list.component';
     NavComponent,
     WorkSummaryComponent,
     WorkCreateComponent,
-    WorkListComponent
+    WorkListComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

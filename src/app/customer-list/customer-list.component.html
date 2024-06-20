@@ -51,7 +51,8 @@
                 <a href="" [routerLink]="['/customer', cust.id]" class="btn btn-sm btn-primary me-1"><i class="fa-solid fa-eye"></i></a>
                 <a href="" routerLink="/customer/add" [queryParams]="{custId:cust.id}" class="btn btn-sm btn-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
                 <button (click)="handleDelete(cust.id)" class="btn btn-sm btn-danger me-1"><i class="fa-solid fa-trash"></i></button>
-                <button (click)="generatePdf(cust.id)" class="btn btn-info btn-sm"><i class="fa-solid fa-file-invoice"></i></button>
+                <!-- <button (click)="generatePdf(cust.id)" class="btn btn-info btn-sm"><i class="fa-solid fa-file-invoice"></i></button> -->
+                <button [routerLink]="['/invoice', cust.id]" class="btn btn-info btn-sm"><i class="fa-solid fa-file-invoice"></i></button>
             </div>
 
         </div>
